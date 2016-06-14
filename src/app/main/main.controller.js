@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, peopleService, toastr) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -17,7 +17,7 @@
     activate();
 
     function activate() {
-      getWebDevTec();
+      getpeopleService();
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
@@ -28,8 +28,8 @@
       vm.classAnimation = '';
     }
 
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
+    function getpeopleService() {
+      vm.awesomeThings = peopleService.getPeople();
 
       angular.forEach(vm.awesomeThings, function(awesomeThing) {
         awesomeThing.rank = Math.random();
@@ -37,3 +37,4 @@
     }
   }
 })();
+

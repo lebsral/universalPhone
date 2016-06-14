@@ -7,8 +7,8 @@
     var toastr;
 
     beforeEach(module('universalPhone'));
-    beforeEach(inject(function(_$controller_, _$timeout_, _webDevTec_, _toastr_) {
-      spyOn(_webDevTec_, 'getTec').and.returnValue([{}, {}, {}, {}, {}]);
+    beforeEach(inject(function(_$controller_, _$timeout_, _peopleService_, _toastr_) {
+      spyOn(_peopleService_, 'getTec').and.returnValue([{}, {}, {}, {}, {}]);
       spyOn(_toastr_, 'info').and.callThrough();
 
       vm = _$controller_('MainController');
