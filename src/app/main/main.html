@@ -25,8 +25,8 @@
           <p>{{ awesomeThing.Phone }}  <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.Phone }}">Dial</md-button></p>
         </md-card-content>
 
-          <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.Phone }}">Dial</md-button>
-
+          <md-button  class="md-action-buttons" ng-href="tel:{{ awesomeThing.Phone }}">Dial</md-button>
+<!-- TODO add $compileProvider.urlSanitizationWhitelist()  for phone -->
 <!--        <span class="md-action-buttons">-->
           <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.url }}">Note</md-button>
 <!--        </span>-->
