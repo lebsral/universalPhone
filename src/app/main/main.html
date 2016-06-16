@@ -17,16 +17,19 @@
       </p>
     </section>
 
-    <div class="techs" layout-align="center">
+    <div class="call-list" layout-align="center">
       <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
         <md-card-content>
           <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
+          <h3 class="md-title">{{ awesomeThing.first_name }} {{ awesomeThing.last_name }}</h3>
+          <p>{{ awesomeThing.Phone }}  <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.Phone }}">Dial</md-button></p>
         </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
-        </div>
+
+          <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.Phone }}">Dial</md-button>
+
+<!--        <span class="md-action-buttons">-->
+          <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.url }}">Note</md-button>
+<!--        </span>-->
       </md-card>
     </div>
   </md-content>
