@@ -90,9 +90,51 @@ section.jumbotron {
   }
 }
 
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700);
+
+$lightGray: #2D2D2D;
+$blue: #285EFA;
+$green: #3DE066;
+$red: #FA4A5D;
+
+$pulseDuration: 0.5s;
+
+body{
+  background-color: #2196F2;
+  font-family: Lato;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.pad{
+  width: 400px;
+  height: 700px;
+  background-color: #232323;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0 30px 35px -25px black;
+
+  animation: showPad 1s ease forwards 1;
+
+
+
 /**
  *  Do not remove the comment below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
  */
 // injector
 // endinjector
+
+

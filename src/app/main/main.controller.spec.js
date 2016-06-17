@@ -8,7 +8,7 @@
 
     beforeEach(module('universalPhone'));
     beforeEach(inject(function(_$controller_, _$timeout_, _peopleService_, _toastr_) {
-      spyOn(_peopleService_, 'getTec').and.returnValue([{}, {}, {}, {}, {}]);
+      spyOn(_peopleService_, 'getPeople').and.returnValue([{}, {}, {}, {}, {}]);
       spyOn(_toastr_, 'info').and.callThrough();
 
       vm = _$controller_('MainController');
@@ -16,14 +16,6 @@
       toastr = _toastr_;
     }));
 
-    it('should have a timestamp creation date', function() {
-      expect(vm.creationDate).toEqual(jasmine.any(Number));
-    });
-
-    it('should define animate class after delaying timeout ', function() {
-      $timeout.flush();
-      expect(vm.classAnimation).toEqual('rubberBand');
-    });
 
     it('should show a Toastr info and stop animation when invoke showToastr()', function() {
       vm.showToastr();

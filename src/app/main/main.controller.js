@@ -11,20 +11,16 @@
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
-    vm.creationDate = 1465888691890;
     vm.showToastr = showToastr;
 
     activate();
 
     function activate() {
       getpeopleService();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
     }
 
     function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
+      toastr.info('Notice: it might be ' +( Math.floor(Math.random() * (7 - 1)) + 1) + ' AM for this person.');
       vm.classAnimation = '';
     }
 
