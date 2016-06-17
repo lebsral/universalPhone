@@ -33,6 +33,7 @@
 
       angular.forEach(vm.awesomeThings, function(awesomeThing) {
         awesomeThing.rank = Math.random();
+        awesomeThing.picNum= Math.floor(Math.random() * (98 - 1)) + 1;
       });
     }
   }
