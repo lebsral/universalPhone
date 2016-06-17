@@ -8,35 +8,51 @@
     <section class="jumbotron">
       <h1>'Allo, 'Allo!</h1>
       <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
+        <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+        <br> Always a pleasure scaffolding your apps.
       </p>
       <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
       <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+        With ♥ thanks to the contributions of
+        <acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
       </p>
     </section>
-<div>
- <md-label layout-align="center"> Today's To-Call List:</md-label>
-  </div>
+    <div>
+      <md-label layout-align="center"> Today's To-Call List:</md-label>
+    </div>
     <div class="call-list" layout-align="center center">
 
 
       <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-card-content>{{awesomeThing.picNum}}
-          <img class="pull-right" ng-src="https://randomuser.me/api/portraits/med/women/{{awesomeThing.picNum}}.jpg" alt="user picture">
+
+        <md-card-header>
+          <md-card-avatar>
+            <img class="md-card-image" ng-src="https://randomuser.me/api/portraits/med/women/{{awesomeThing.picNum}}.jpg" alt="user picture">
+          </md-card-avatar>
+          <span class="md-subhead">
+         {{ awesomeThing.first_name }} {{ awesomeThing.last_name }}
+          </span>
+        </md-card-header>
+
+        <span>
+          {{ awesomeThing.Phone }}
+
+            </span>
+        <md-card-actions layout="row" layout-align="start center">
+          <md-button class="md-raised" ng-href="{{ awesomeThing.Phone }}">
+            <!-- TODO add $compileProvider.urlSanitizationWhitelist()  for phone -->
+            <i class="material-icons" ng-style="{color: 'green'}">phone</i>
+
+          </md-button>
+          <md-button class="md-raised">
+            <i class="material-icons">note_add</i>
+          </md-button>
+        </md-card-actions>
 
 
-          <h3 class="md-title">{{ awesomeThing.first_name }} {{ awesomeThing.last_name }}</h3>
-          <p>{{ awesomeThing.Phone }}  <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.Phone }}">Dial</md-button></p>
-        </md-card-content>
-
-          <md-button  class="md-action-buttons" ng-href="tel:{{ awesomeThing.Phone }}">Dial</md-button>
-<!-- TODO add $compileProvider.urlSanitizationWhitelist()  for phone -->
-<!--        <span class="md-action-buttons">-->
-          <md-button  class="md-action-buttons" ng-href="{{ awesomeThing.url }}">Note</md-button>
-<!--        </span>-->
       </md-card>
+
+
     </div>
   </md-content>
 
